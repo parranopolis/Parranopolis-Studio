@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: black;
+  --foreground: white;
+  --font-Variable: var(--font-montserrat-alternates)
+  --accent: #ae804e;
+  --primary: #38a169;
+  --dark-primary: #2f855a;
+  --secondary: #81e6d9;
+  --dark-background: #2b6cb0;
+
+  --CTA-button-bg:#2858D6;
+  --light-background: #fafafa;
+  --main-text: #2d3748;
+  --secondary-text: #4a5568;
+  --section-bg: #f7fafc;
+  --details-active-elements: #b9f5d0;
+  --error: #feb2b2;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --font-sans: var(--font-geist-sans); */
+  --font-Variable: var(--font-montserrat-alternates)
+  --font-mont: var(--font-montserrat);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: black;
     --foreground: #ededed;
+    /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+    /* line-height: 1.5; */
+    font-weight: 400;
+
+    /* color-scheme: light dark; */
+    /* color: rgba(255, 255, 255, 0.87); */
+    /* background-color: #242424; */
+    --primary-color: #100a19;
+    --secondary-color: #261641;
+    --accent: #ae804e;
+    --thirt: #3d1e80;
+    /* -- */
+    --light-bg: #f7f9fa;
+    --dark-color: #011537;
+    --main-text: #2e2e2e;
+    --complete-task: #c8f7c5;
+    --secondary-text: #7a7a7a;
+    --alerts: #ffe58f;
+    --CTA: #1c4e80;
+    --error: #ff6b6b;
+    --h1: 2.986rem;
+    --h2: 2.488rem;
+    --h3: 2.074rem;
+    --h4: 1.728rem;
+    --h5: 1.44rem;
+    --h6: 1.2rem;
+    --p-large: 1rem;
+    --p-medium: 0.883rem;
+    --p-small: 0.694rem;
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-foreground);
+  /* font-family: var(--font-mont); */
+}
+
+html {
+  font-size: 14px;
+  font-family: "Montserrat";
+  font-style: normal;
+  padding: 0;
+  margin: auto;
+  height: 100%;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+.montserrat-alternates{
+  font-family: var(--font-montserrat-alternates);
+}
+
+.CTA-button{
+  background: var(--CTA-button-bg);
+}
+.primary-color {
+  background: var(--primary-color);
+}
+.task {
+  background: var(--light-bg);
+}
+.active-task {
+  background-color: var(--alerts);
+}
+.complete-task {
+  background-color: var(--complete-task);
+}
+.text-two {
+  color: var(--complete-task);
+}
+/* ----------- paragraph ----------- */
+.p-small {
+  font-size: var(--p-small);
+}
+
+.p-medium {
+  font-size: var(--p-medium);
+}
+
+.p-large {
+  font-size: var(--p-large);
+}
+
+/* ----------- headings ----------- */
+
+.h1 {
+  font-size: var(--h1);
+}
+
+.h2 {
+  font-size: var(--h2);
+}
+
+.h3 {
+  font-size: var(--h3);
+}
+
+.h4 {
+  font-size: var(--h4);
+}
+
+.h5 {
+  font-size: var(--h5);
+}
+
+.h6 {
+  font-size: var(--h6);
 }
