@@ -8,9 +8,11 @@
   --primary: #38a169;
   --dark-primary: #2f855a;
   --secondary: #81e6d9;
-  --dark-background: #2b6cb0;
+  --dark-background: #100B18;
 
   --CTA-button-bg:#2858D6;
+  --CTA-bg:#0c01ad56;
+  --blue2:#5e80dc;
   --light-background: #fafafa;
   --main-text: #2d3748;
   --secondary-text: #4a5568;
@@ -64,8 +66,8 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--color-foreground);
+  /* background: var(--background); */
+  /* color: var(--color-foreground); */
   /* font-family: var(--font-mont); */
 }
 
