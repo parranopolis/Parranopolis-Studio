@@ -8,7 +8,7 @@ export default function Home() {
       <header className="absolute inset-x-0 to-0">
 {/* flex justify-around items-center absolute w-full pt-2 */}
        <nav className="flex items-center justify-between max-w-6x1 mx-auto px-4 py-2" aria-label="Primary">
-        <a href="/" className="flex items-center gap-2">
+        <a href="" className="flex items-center gap-2">
           <Image src={'/images/logo2.webp'} width={50} height={50} alt="logo of Parranopolis Studio" />
           <span className="sr-only"> Parranopolis Studio</span>
         </a>
