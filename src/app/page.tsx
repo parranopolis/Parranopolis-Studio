@@ -57,21 +57,56 @@ export default function Home() {
           </p>
         </section>
         {/* services Section */}
-        <section className="bg-[var(--dark-background)] text-white px-12 py-16 mx-auto w-full space-y-6 sm:px-25 sm:text-center" id="services">
-          <h3 className="text-4xl montserrat-alternates font-medium w-3/4 sm:w-full">Discover What We Do</h3>
-          <div>
-            <article>
-              card
-            </article>
-          </div>
+        <section className="bg-[var(--dark-background)] text-white py-16 mx-auto w-full space-y-6" id="services">
+          <h3 className="px-12 text-4xl montserrat-alternates font-medium w-3/4 sm:w-full sm:px-25 sm:text-center">Discover What We Do</h3>
+          <article className="flex overflow-x-auto w-[80%] m-auto  snap-x snap-mandatory scroll-smooth gap-8">
+            
+            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/web-development.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4">
+              <h3 className="text-2xl w-full font-bold">Custom Web Development</h3>
+              <p className="text-xl font-light">
+                We design sleek, responsive websites tailored to your business goals.
+                Fast-loading, mobile-friendly, and optimized for SEO.
+              </p>
+            </section>
+
+            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/mobile-web-app.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4">
+              <h3 className="text-3xl w-full font-bold">Mobile & Web Applications</h3>
+              <p className="text-xl font-light">
+                Need a tool for internal use or customer engagement? We build
+                intuitive, high-performance apps for business operations and customer
+                experiences.
+              </p>
+            </section>
+
+            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/Business-Process-Automation.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4">
+              <h3 className="text-3xl w-full font-bold">Business Process Automation</h3>
+              <p className="text-xl font-light">
+                We automate repetitive tasks—like client intake, email follow-ups, and
+                appointment reminders—to help you focus on what really matters.
+              </p>
+            </section>
+
+            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/maintenance.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4">
+              <h3 className="text-3xl w-full font-bold">Ongoing Support & Maintenance</h3>
+              <p className="text-xl font-light">
+                Enjoy peace of mind with continuous updates, security monitoring, and
+                technical support tailored to your business.
+              </p>
+            </section>
+          </article>
         </section>
+
         {/* Trust Section */}
         <section id="trust-heading" className="px-12 py-16 w-full space-y-6 sm:px-45 sm:text-center">
           <h3 className="text-4xl montserrat-alternates font-medium">Why Businesses Trust on Us?</h3>
           <p className="text-2xl">We don&apos;t just build software we create long-term growth strategies that adapt to your business needs</p>
           <div>
             <article>
-              card
+              {/* <div className="">
+                  <h3>Title</h3>
+                  <p>We work directly with entrepreneurs and managers to create tools that actually solve problems.</p>
+                  <Image src={'/images/location.webp'} width={100} height={100} alt="location" />
+                </div> */}
             </article>
           </div>
         </section>
