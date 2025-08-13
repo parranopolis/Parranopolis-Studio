@@ -35,7 +35,7 @@ export default function Home() {
         left: offset,
         behavior: "smooth",
       });
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [isMobile]);
