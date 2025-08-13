@@ -1,7 +1,45 @@
+"use client"
 // import { Montserrat_Alternates } from "next/font/google";
 import Image from "next/image";
 
+import { useEffect, useState, useRef } from "react";
+
 export default function Home() {
+
+    // const scrollRef = useRef(null);
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768); // md = 768px en Tailwind
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile || !scrollRef.current) return;
+
+    const container = scrollRef.current;
+    const sections = container.querySelectorAll("section");
+    let index = 0;
+    
+
+    const interval = setInterval(() => {
+      index = (index + 1) % sections.length;
+      const offset = sections[index].offsetLeft;
+      container.scrollTo({
+        left: offset,
+        behavior: "smooth",
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isMobile]);
+
   return (
      <div className="min-h-screen flex flex-col" >
         {/* antes de seguir debes arreglar el nav para que cresca deacuerdo al tamaño de la pantalla. agregar efecto parallax */}
@@ -59,9 +97,14 @@ export default function Home() {
         {/* services Section */}
         <section className="bg-[var(--dark-background)] text-white py-16 mx-auto w-full space-y-6" id="services">
           <h3 className="px-12 text-4xl montserrat-alternates font-medium w-3/4 sm:w-full sm:px-25 sm:text-center">Discover What We Do</h3>
-          <article className="flex overflow-x-auto w-[80%] m-auto  snap-x snap-mandatory scroll-smooth gap-8">
+          <article className="flex overflow-x-auto w-[90%] m-auto snap-x snap-mandatory scroll-smooth gap-8
+          md:flex-wrap md:justify-center
+          "
+          ref={scrollRef}>
             
-            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/web-development.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4">
+            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/web-development.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4
+            md:min-w-0 md:w-sm
+            ">
               <h3 className="text-2xl w-full font-bold">Custom Web Development</h3>
               <p className="text-xl font-light">
                 We design sleek, responsive websites tailored to your business goals.
@@ -69,7 +112,9 @@ export default function Home() {
               </p>
             </section>
 
-            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/mobile-web-app.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4">
+            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/mobile-web-app.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4
+            md:min-w-0 md:w-sm
+            ">
               <h3 className="text-3xl w-full font-bold">Mobile & Web Applications</h3>
               <p className="text-xl font-light">
                 Need a tool for internal use or customer engagement? We build
@@ -78,7 +123,9 @@ export default function Home() {
               </p>
             </section>
 
-            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/Business-Process-Automation.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4">
+            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/Business-Process-Automation.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4
+              md:min-w-0 md:w-sm
+            ">
               <h3 className="text-3xl w-full font-bold">Business Process Automation</h3>
               <p className="text-xl font-light">
                 We automate repetitive tasks—like client intake, email follow-ups, and
@@ -86,7 +133,9 @@ export default function Home() {
               </p>
             </section>
 
-            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/maintenance.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4">
+            <section className="rounded-4xl min-w-full snap-start bg-[url(/images/maintenance.webp)] bg-no-repeat bg-cover h-[500px] flex flex-col justify-end px-12 pb-12 gap-4
+              md:min-w-0 md:w-sm
+            ">
               <h3 className="text-3xl w-full font-bold">Ongoing Support & Maintenance</h3>
               <p className="text-xl font-light">
                 Enjoy peace of mind with continuous updates, security monitoring, and
