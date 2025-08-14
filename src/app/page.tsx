@@ -40,6 +40,10 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [isMobile]);
 
+const alert = () => {
+  window.alert('Hola Liseth, el boton estará listo pronto. PACIENCIA Joven Padawan')
+}
+
   return (
      <div className="min-h-screen flex flex-col" >
         {/* antes de seguir debes arreglar el nav para que cresca deacuerdo al tamaño de la pantalla. agregar efecto parallax */}
@@ -78,7 +82,7 @@ export default function Home() {
                 lg:text-4xl lg:font-light
                 
                 `}>Build smarter, faster, and beautifully. We craft custom software, websites, and automations for small and medium-sized businesses.</h2>
-              <button className="CTA-button bg-[var(--CTA-button-bg)] rounded-2xl py-2 font-medium
+              <button onClick={alert} className="CTA-button bg-[var(--CTA-button-bg)] rounded-2xl py-2 font-medium
                 sm:w-[45%] sm:py-3 sm:text-2xl sm:font-extralight 
                 xl:w-90
               ">Free Consultation</button>
@@ -208,7 +212,7 @@ export default function Home() {
             <button className="CTA-button bg-[var(--CTA-button-bg)] rounded-2xl py-2 px-6 font-medium
                 sm:w-[45%] sm:py-3 sm:text-2xl sm:font-extralight 
                 xl:w-90
-              ">Free Consultation</button>
+              " onClick={alert}>Free Consultation</button>
           </div>
         </section>
         <footer className="bg-[var(--dark-background)] text-white px-12 py-16 w-full sm:px-45 sm:text-center space-y-3">
