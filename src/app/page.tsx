@@ -86,9 +86,9 @@ export default function Home() {
           </div>
         </section>
         {/* about Section */}
-        <section id="about" className="px-12 py-16 max-w-5xl mx-auto space-y-6 sm:px-25 sm:text-center">
-          <h3 className="text-4xl montserrat-alternates font-medium w-3/4 sm:w-full">About Parranopolis Studio</h3>
-          <p className="text-2xl">Parranopolis Studio helps businesses grow by building intelligent, modern, and efficient digital tools. 
+        <section id="about" className="px-12 py-16 max-w-5xl mx-auto space-y-6 sm:px-25 sm:text-center lg:px-8">
+          <h3 className="text-4xl montserrat-alternates font-medium w-3/4 sm:w-full lg:text-6xl lg:py-8">About Parranopolis Studio</h3>
+          <p className="text-2xl lg:text-4xl lg:font-extralight">Parranopolis Studio helps businesses grow by building intelligent, modern, and efficient digital tools. 
             We specialize in custom software development, web &amp; mobile applications, and business automation. 
             Our mission is to empower SMBs to thrive in the digital age—without the complexity. 
             {/* Whether you&apos;re running a local clinic, a small restaurant, or a service-based business, we&apos;re here to deliver premium solutions that save time and drive results. */}
@@ -96,9 +96,9 @@ export default function Home() {
         </section>
         {/* services Section */}
         <section className="bg-[var(--dark-background)] text-white py-16 mx-auto w-full space-y-6" id="services">
-          <h3 className="px-12 text-4xl montserrat-alternates font-medium w-3/4 sm:w-full sm:px-25 sm:text-center">Discover What We Do</h3>
+          <h3 className="px-12 py-8 text-4xl montserrat-alternates font-medium w-3/4 sm:w-full sm:px-25 sm:text-center lg:text-6xl lg:py-16">Discover What We Do</h3>
           <article className="flex overflow-x-auto w-[90%] m-auto snap-x snap-mandatory scroll-smooth gap-8
-          md:flex-wrap md:justify-center
+          md:flex-wrap md:justify-center lg:w-[95%]
           "
           ref={scrollRef}>
             
@@ -146,26 +146,62 @@ export default function Home() {
         </section>
 
         {/* Trust Section */}
-        <section id="trust-heading" className="px-12 py-16 w-full space-y-6 sm:px-45 sm:text-center">
-          <h3 className="text-4xl montserrat-alternates font-medium">Why Businesses Trust on Us?</h3>
-          <p className="text-2xl">We don&apos;t just build software we create long-term growth strategies that adapt to your business needs</p>
+        <section id="trust-heading" className=" py-16 w-full space-y-6 sm:text-center justify-around md:py-20 lg:py-40">
+          <h3 className="text-4xl montserrat-alternates font-medium px-12 md:px-0 lg:text-6xl">Why Businesses Trust on Us?</h3>
+          <p className="text-2xl md:text-3xl font-light px-12 md:px-20 lg:text-4xl lg:font-extralight lg:px-60 lg:py-15">We don&apos;t just build software we create long-term growth strategies that adapt to your business needs</p>
           <div>
-            <article>
-              {/* <div className="">
-                  <h3>Title</h3>
-                  <p>We work directly with entrepreneurs and managers to create tools that actually solve problems.</p>
-                  <Image src={'/images/location.webp'} width={100} height={100} alt="location" />
-                </div> */}
+            <article className="text-white flex flex-col gap-12">
+
+              <div className="flex flex-col justify-around items-center gap-12 bg-[var(--bg-card)] px-12 py-16 w-5/6 rounded-tr-[50px] rounded-br-[50px] shadow-[0_2px_70px_rgba(0,0,0,0.95)]
+              md:flex-row-reverse md:text-left md:pl-30 lg:pl-60
+              ">
+                <Image src={'/images/location.webp'} width={190} height={190} alt="location" className="w-[133px] h-[133px]"/>
+                <div>
+                  <h3 className="pb-4 text-2xl font-bold md:text-3xl lg:text-5xl">We Understand Small Business Needs</h3>
+                  <p className="text-xl md:text-2xl lg:text-3xl lg:font-extralight">We work directly with entrepreneurs and managers to create tools that actually solve problems.</p>
+                </div>
+              </div>
+
+              <div className="bg-[var(--bg-card)] text-right flex flex-col justify-around items-center gap-12 px-12 py-16 w-5/6 ml-auto rounded-tl-[50px] rounded-bl-[50px] shadow-[0_2px_90px_rgba(0,0,0,0.95)] 
+              md:flex-row md:pr-30 lg:pr-60
+              
+              ">
+                <Image src={'/images/modern.webp'} width={190} height={190} alt="location" className="w-[133px] h-[133px]"/>
+                <div>
+                  <h3 className="pb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Modern Design Meets Functionality</h3>
+                  <p className="text-xl md:text-2xl lg:text-3xl lg:font-extralight">Your software should be elegant and effective. We deliver both.</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-around items-center gap-12 bg-[var(--bg-card)] px-12 py-16 w-5/6 rounded-tr-[50px] rounded-br-[50px] shadow-[0_20px_70px_rgba(0,0,0,0.95)]
+              md:flex-row-reverse md:text-left md:pl-30 lg:pl-60">
+                <Image src={'/images/friendly.webp'} width={190} height={190} alt="location" className="w-[133px] h-[133px]"/>
+                <div>
+                  <h3 className="pb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Fast Turnaround, Long-Term Value</h3>
+                  <p className="text-xl md:text-2xl lg:text-3xl lg:font-extralight">From first meeting to launch, we work fast—without sacrificing quality. And we’re here to support your business as it grows.</p>
+                </div>
+              </div>
+              
+              <div className="bg-[var(--bg-card)] text-right  flex flex-col justify-around items-center gap-12 px-12 py-16 w-5/6 ml-auto rounded-tl-[50px] rounded-bl-[50px] shadow-[0_2px_90px_rgba(0,0,0,0.95)] 
+              md:flex-row md:pr-30 lg:pr-60
+              ">
+                <Image src={'/images/scalable.webp'} width={190} height={190} alt="location" className="w-[133px] h-[133px]"/>
+                <div>
+                  <h3 className="pb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Scalable, Secure, Reliable</h3>
+                  <p className="text-xl md:text-2xl lg:text-3xl lg:font-extralight">Built on modern tech stacks with best practices in performance and security.</p>
+                </div>
+              </div>
+              
             </article>
           </div>
         </section>
+
         {/* Call-To-Action Section */}
-        
         <section id="contact" className="px-12 py-16 w-full space-y-6 bg-[var(--CTA-bg)] bg-[url(/images/CTA-bg.webp)] bg-cover bg-no-repeat text-white bg-blend-screen
-        sm:px-35 sm:text-center sm:space-y-18">
+        sm:px-35 sm:text-center sm:space-y-18 md:py-18 lg:py-28">
         {/* <section id="contact" className="px-12 py-16 w-full space-y-6 bg-gradient-to-tl from-[var(--CTA-button-bg)] to-[var(--blue2)"> */}
-          <h3 className="text-4xl sm:text-5xl montserrat-alternates font-semibold text-center">Ready to Take Your Business to the Next Level?</h3>
-          <p className="text-2xl sm:text-3xl">Get in touch to discuss your business goals. Whether you&apos;re starting from scratch or want to improve what you have, we&apos;ll help you take the next step—smartly and affordably.</p>
+          <h3 className="text-4xl sm:text-5xl montserrat-alternates font-semibold text-center lg:text-6xl">Ready to Take Your Business to the Next Level?</h3>
+          <p className="text-2xl sm:text-3xl lg:text-4xl">Get in touch to discuss your business goals. Whether you&apos;re starting from scratch or want to improve what you have, we&apos;ll help you take the next step—smartly and affordably.</p>
           <div className="flex justify-center gap-5">
             <span><Image src={'/images/laptop.webp'} width={50} height={50} alt="laptop" /></span>
             {/* <button className="bg-[var(--CTA-button-bg)] text-white ">Get a Free Consultation</button> */}
