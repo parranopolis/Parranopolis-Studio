@@ -96,7 +96,7 @@ const handleCloseForm = () =>{
                 `}>Build smarter, faster, and beautifully. We craft custom software, websites, and automations for small and medium-sized businesses.</h2>
               <button onClick={handleOpenForm} className="CTA-button bg-[var(--CTA-button-bg)] rounded-2xl py-2 font-medium
                 sm:w-[45%] sm:py-3 sm:text-2xl sm:font-extralight 
-                xl:w-90
+                xl:w-90 cursor-pointer
               ">Free Consultation</button>
             </div>
           </div>
@@ -224,7 +224,7 @@ const handleCloseForm = () =>{
             {/* <button className="bg-[var(--CTA-button-bg)] text-white ">Get a Free Consultation</button> */}
             <button className="CTA-button bg-[var(--CTA-button-bg)] rounded-2xl py-2 px-6 font-medium
                 sm:w-[45%] sm:py-3 sm:text-2xl sm:font-extralight 
-                xl:w-90
+                xl:w-90 cursor-pointer
               " onClick={handleOpenForm}>Free Consultation</button>
           </div>
         </section>
@@ -267,7 +267,11 @@ function Form ({onClose}:{onClose: ()=> void}) {
     });
 
     if (res.ok) {
-      status!.innerHTML = "Message sent, you will be contacted by a member of our team as soon as possible.";
+      status!.innerHTML = `
+      <section>
+        <h3 class="text-4xl text-black pb-4">Message Sent</h3>
+        <p class="text-2xl">You will be contacted by a member of our team as soon as possible.</p>
+      </section>`;
       form.reset();
       setIsShow(true)
       setTimeout(()=>{
@@ -282,26 +286,38 @@ function Form ({onClose}:{onClose: ()=> void}) {
 }
 
   return <>
-  <section className="FormModal bg-white w-1/2 p-12 fixed top-1/2 letf-1/2 translate-x-1/2 -translate-y-1/2">
+  <section role="dialog"
+  aria-modal="true"
+  aria-labelledby="contact-title" className="
+  FormModal rounded-2xl shadow-2xl bg-white
+   p-12 
+   -translate-x-1/2 -translate-y-1/2
+   fixed left-1/2 top-1/2 z-50
+   w-5/6 max-w-xl
+   ">
     {!isShow ?<form id="contact-form" action="https://formspree.io/f/mgvzqbrv" method="POST" onSubmit={handleSubmit}>
-      <h3 className="text-4xl text-black">Lets Get in Touch</h3>
-      <div className="flex flex-col">
+    <div className="flex justify-between items-center">
+      <h3 className="text-4xl text-black pb-4">Lets Get in Touch</h3>
+      <span className="text-4xl cursor-pointer" onClick={onClose}>X</span>
+    </div>
+      <div className="flex flex-col gap-4">
         <label htmlFor="name">Your Name</label>
-        <input className="border-1" type="text" name="name" placeholder="John" required/>
+        <input className="p-4 rounded-2xl border-1" type="text" name="name" placeholder="John" required/>
         
         <label htmlFor="tlf">Phone Number</label>
-        <input type="text" className="border-1" id="tlf" name="tlf" placeholder="0000000000" required/>
+        <input type="tel" className="p-4 rounded-2xl border-1" id="tlf" name="tlf" placeholder="0000000000" required/>
 
-        <label htmlFor="mail">Email</label>
-        <input className="border-1" type="email" id="mail" name="mail" placeholder="mail" required/>
+        <label htmlFor="email">Email</label>
+        <input className="p-4 rounded-2xl border-1" type="email" id="email" name="mail" placeholder="mail" required/>
         
         <label htmlFor="textarea">Anything you&apos;d like to add before the call?</label>
-        <textarea className="border-1" rows={6} name="Extra message" id="textarea" placeholder="Please add 3 days and times when I can call you or a brief description of your current issue."/>
+        <textarea className="p-4 rounded-2xl border-1" rows={6} name="Extra message" id="textarea" placeholder="Please add 3 days and times when I can call you or a brief description of your current issue."/>
       </div>
-      <button className="" id="my-form-button">Submit</button>
+      <button className="mt-6 bg-[var(--dark-background)] p-4 w-full text-2xl text-white" id="my-form-button">Submit</button>
       </form>: ''}
-      <article id="statusMessage">
-      {isShow ? 'Mensaje enviado' : ''}
+      <article id="statusMessage" className="text-2xl text-center">
+      {isShow ? 
+      '' : ''}
       </article>
   </section>
   </>
