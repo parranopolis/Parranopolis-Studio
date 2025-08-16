@@ -1,6 +1,7 @@
 "use client"
 // import { Montserrat_Alternates } from "next/font/google";
 import Image from "next/image";
+// import { setTimeout } from "node:timers/promises";
 
 import { useEffect, useState, useRef } from "react";
 
@@ -10,6 +11,7 @@ export default function Home() {
     const scrollRef = useRef<HTMLDivElement>(null);
 
   const [isMobile, setIsMobile] = useState(false);
+  const [isTrue, setIsTrue] = useState(false)
 
   useEffect(() => {
     const checkScreen = () => {
@@ -40,8 +42,12 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [isMobile]);
 
-const alert = () => {
-  window.alert('Hola Liseth, el boton estará listo pronto. PACIENCIA Joven Padawan')
+const handleOpenForm = () => {
+  setIsTrue(!isTrue)
+}
+
+const handleCloseForm = () =>{
+  setIsTrue(false);
 }
 
   return (
@@ -64,6 +70,12 @@ const alert = () => {
        </header>
 
       <main id="top" className="flex-1">
+        
+        {/* <section className="border-1 w-full"> */}
+        {isTrue && (<Form onClose={handleCloseForm}/>)}
+        {/* <Form/> */}
+        {/* </section> */}
+
         {/* hero Section */}
         <section className="bg-[url(/images/test.png)] bg-no-repeat bg-center bg-size-[150%] h-screen bg-black text-white flex
           lg:bg-size-[100%]
@@ -82,12 +94,13 @@ const alert = () => {
                 lg:text-4xl lg:font-light
                 
                 `}>Build smarter, faster, and beautifully. We craft custom software, websites, and automations for small and medium-sized businesses.</h2>
-              <button onClick={alert} className="CTA-button bg-[var(--CTA-button-bg)] rounded-2xl py-2 font-medium
+              <button onClick={handleOpenForm} className="CTA-button bg-[var(--CTA-button-bg)] rounded-2xl py-2 font-medium
                 sm:w-[45%] sm:py-3 sm:text-2xl sm:font-extralight 
                 xl:w-90
               ">Free Consultation</button>
             </div>
           </div>
+          {/* <Form></Form> */}
         </section>
         {/* about Section */}
         <section id="about" className="px-12 py-16 max-w-5xl mx-auto space-y-6 sm:px-25 sm:text-center lg:px-8">
@@ -212,7 +225,7 @@ const alert = () => {
             <button className="CTA-button bg-[var(--CTA-button-bg)] rounded-2xl py-2 px-6 font-medium
                 sm:w-[45%] sm:py-3 sm:text-2xl sm:font-extralight 
                 xl:w-90
-              " onClick={alert}>Free Consultation</button>
+              " onClick={handleOpenForm}>Free Consultation</button>
           </div>
         </section>
         <footer className="bg-[var(--dark-background)] text-white px-12 py-16 w-full sm:px-45 sm:text-center space-y-3">
@@ -236,4 +249,60 @@ const alert = () => {
       </main>
      </div>
   );
+}
+
+function Form ({onClose}:{onClose: ()=> void}) {
+  const [isShow, setIsShow] = useState(false)
+
+  async function handleSubmit(event:React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const form = event.target as HTMLFormElement
+    const data = new FormData(form)
+    const status = document.querySelector('#statusMessage');
+      try {
+    const res = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      status!.innerHTML = "Message sent, you will be contacted by a member of our team as soon as possible.";
+      form.reset();
+      setIsShow(true)
+      setTimeout(()=>{
+        onClose()
+      },6000)
+    } else {
+      status!.innerHTML = "There was a problem sending the message. Please try again.";
+    }
+  } catch (error) {
+    status!.innerHTML = "There was a problem sending the message. Please try again.";
+  }
+}
+
+  return <>
+  <section className="FormModal bg-white w-1/2 p-12 fixed top-1/2 letf-1/2 translate-x-1/2 -translate-y-1/2">
+    {!isShow ?<form id="contact-form" action="https://formspree.io/f/mgvzqbrv" method="POST" onSubmit={handleSubmit}>
+      <h3 className="text-4xl text-black">Lets Get in Touch</h3>
+      <div className="flex flex-col">
+        <label htmlFor="name">Your Name</label>
+        <input className="border-1" type="text" name="name" placeholder="John" required/>
+        
+        <label htmlFor="tlf">Phone Number</label>
+        <input type="text" className="border-1" id="tlf" name="tlf" placeholder="0000000000" required/>
+
+        <label htmlFor="mail">Email</label>
+        <input className="border-1" type="email" id="mail" name="mail" placeholder="mail" required/>
+        
+        <label htmlFor="textarea">Anything you&apos;d like to add before the call?</label>
+        <textarea className="border-1" rows={6} name="Extra message" id="textarea" placeholder="Please add 3 days and times when I can call you or a brief description of your current issue."/>
+      </div>
+      <button className="" id="my-form-button">Submit</button>
+      </form>: ''}
+      <article id="statusMessage">
+      {isShow ? 'Mensaje enviado' : ''}
+      </article>
+  </section>
+  </>
 }
