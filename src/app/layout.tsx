@@ -49,7 +49,7 @@ export default function RootLayout({
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL("www.parranopolisstudio.com"),
+  metadataBase: new URL("https://www.parranopolisstudio.com"),
   title: "Parranopolis Studio — Custom Software & Automations for SMBs in Denver",
   description:
     "We build fast, modern websites, web & mobile apps, and AI automations for small businesses in Colorado.",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Parranopolis Studio",
     description:
       "Custom software, web & mobile apps, and automations for SMBs.",
-    url: "www.parranopolisstudio.com",
+    url: "/",
     siteName: "Parranopolis Studio",
     locale: "en_US",
     type: "website"
