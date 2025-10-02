@@ -31,10 +31,6 @@ import "./globals.css";
 //   subsets: ["latin"],
 // });
 
-export const metadata: Metadata = {
-  title: "Parranopolis Studio",
-  description: "Powerful Software Solutions for Growing Businesses",
-};
 
 export default function RootLayout({
   children,
@@ -51,3 +47,21 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://parranopolisstudio.com"),
+  title: "Parranopolis Studio — Custom Software & Automations for SMBs in Denver",
+  description:
+    "We build fast, modern websites, web & mobile apps, and AI automations for small businesses in Colorado.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Parranopolis Studio",
+    description:
+      "Custom software, web & mobile apps, and automations for SMBs.",
+    url: "https://parranopolisstudio.com",
+    siteName: "Parranopolis Studio",
+    locale: "en_US",
+    type: "website"
+  },
+  robots: { index: true, follow: true }
+};

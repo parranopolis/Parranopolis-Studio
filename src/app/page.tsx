@@ -232,7 +232,7 @@ const handleCloseForm = () =>{
           <address>
             <ul>
               <li>Email: <a href="mailto:parranopolisstudio@gmail.com" className="underline">parranopolisStudio@gmail.com</a></li>
-              <li>Phone: <a href="tel:+10000000000" className="underline">(000) 000-0000</a></li>
+              <li>Phone: <a href="tel:+17205619763" className="underline">(720) 561-9763</a></li>
             </ul>
           </address>
           <ul className="text-sm space-y-3">
@@ -322,3 +322,35 @@ function Form ({onClose}:{onClose: ()=> void}) {
   </section>
   </>
 }
+
+// inside RootLayout <body>, using next/script
+import Script from "next/script";
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Parranopolis Studio",
+  "url": "https://parranopolisstudio.com",
+  "logo": "https://parranopolisstudio.com/logo.png",
+  "image": "https://parranopolisstudio.com/og-cover.jpg",
+  "description": "Custom software, web & mobile apps, and automations for SMBs.",
+  "telephone": "+1-303-555-0123",
+  "areaServed": ["Denver CO","Colorado","United States"],
+  "sameAs": [
+    "https://www.linkedin.com/company/parranopolis-studio",
+    "https://github.com/parranopolis"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Automations" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maintenance & Support" } }
+    ]
+  }
+};
+
+<Script id="org-schema" type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
