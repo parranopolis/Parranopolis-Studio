@@ -370,7 +370,7 @@ function Form ({onClose}:{onClose: ()=> void}) {
       status!.innerHTML = "There was a problem sending the message. Please try again.";
     }
   } catch (error) {
-    status!.innerHTML = "There was a problem sending the message. Please try again.";
+    status!.innerHTML = `There was a problem sending the message. Please try again. ${error}`;
   }
 }
 
