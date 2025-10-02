@@ -3,7 +3,7 @@
 import Image from "next/image";
 // import { setTimeout } from "node:timers/promises";
 import { useEffect, useState, useRef } from "react";
-
+import Link from "next/link";
 export default function Home() {
 
     // const scrollRef = useRef(null);
@@ -246,7 +246,10 @@ const handleCloseForm = () =>{
           <div className="footer-inner">
     {/* <!-- Brand / Summary --> */}
     <div className="footer-brand">
-      <a href="/" className="brand" aria-label="Parranopolis Studio Home">Parranopolis Studio</a>
+      <Link href="/" className="brand" aria-label="Parranopolis Studio Home">
+      Parranopolis Studio
+    </Link>
+      {/* <a href="/" className="brand" aria-label="Parranopolis Studio Home">Parranopolis Studio</a> */}
       <p className="tagline">
         We help small & mid-sized businesses grow with intelligent, modern, and efficient digital tools:
         custom software, web & mobile apps, and business automation—without the complexity.
