@@ -2,7 +2,6 @@
 // import { Montserrat_Alternates } from "next/font/google";
 import Image from "next/image";
 // import { setTimeout } from "node:timers/promises";
-import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 
 export default function Home() {
