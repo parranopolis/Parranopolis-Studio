@@ -291,8 +291,8 @@ const handleCloseForm = () =>{
     {/* <!-- Location / Contact --> */}
     <address className="footer-contact" aria-label="Location & Contact">
       <p><strong>Denver, Colorado</strong> · Serving SMBs across Colorado & the U.S.</p>
-      <p>Email: <a href="mailto:hello@parranopolis.com">hello@parranopolis.com</a> ·
-         Phone: <a href="tel:+1-000-000-0000">+1 (000) 000-0000</a></p>
+      <p>Email: <a href="mailto:parranopolisstudio@gmail.com">parranopolisstudio@gmail.com</a> ·
+         Phone: <a href="tel:+1-720-561-9763">+1 (720) 5619763</a></p>
       <p><a href="/portfolio">Portfolio</a> · <a href="/pricing">Pricing</a> ·
          <a href="/contact">Free Consultation</a></p>
     </address>
@@ -316,8 +316,8 @@ const handleCloseForm = () =>{
     "contactPoint": [{
       "@type": "ContactPoint",
       "contactType": "sales",
-      "email": "hello@parranopolis.com",
-      "telephone": "+1-000-000-0000",
+      "email": "parranopolisstudio@gmail.com",
+      "telephone": "+1-720-561-9763",
       "areaServed": "US"
     }],
     "sameAs": [
