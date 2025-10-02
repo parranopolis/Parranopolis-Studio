@@ -2,7 +2,7 @@
 // import { Montserrat_Alternates } from "next/font/google";
 import Image from "next/image";
 // import { setTimeout } from "node:timers/promises";
-
+import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 
 export default function Home() {
@@ -229,7 +229,7 @@ const handleCloseForm = () =>{
           </div>
         </section>
         <footer className="bg-[var(--dark-background)] text-white px-12 py-16 w-full sm:px-45 sm:text-center space-y-3">
-          <address>
+          {/* <address>
             <ul>
               <li>Email: <a href="mailto:parranopolisstudio@gmail.com" className="underline">parranopolisStudio@gmail.com</a></li>
               <li>Phone: <a href="tel:+17205619763" className="underline">(720) 561-9763</a></li>
@@ -242,7 +242,94 @@ const handleCloseForm = () =>{
             <li>Mobile App Development for SMBs</li>
             <li>Denver-based Software Studio</li>
             <li>Affordable AI Integrations</li>
-          </ul>
+          </ul> */}
+
+          <div className="footer-inner">
+    {/* <!-- Brand / Summary --> */}
+    <div className="footer-brand">
+      <a href="/" className="brand" aria-label="Parranopolis Studio Home">Parranopolis Studio</a>
+      <p className="tagline">
+        We help small & mid-sized businesses grow with intelligent, modern, and efficient digital tools:
+        custom software, web & mobile apps, and business automation—without the complexity.
+      </p>
+    </div>
+
+    {/* <!-- SEO Footer Links (Option B: service-led + industries) --> */}
+    <nav className="footer-nav" aria-label="Services & Industries">
+      <ul className="footer-links">
+        {/* <!-- Services --> */}
+        <li><a href="/custom-software" title="Custom Software Development for SMBs">
+          <strong>Custom Software Development</strong></a></li>
+        <li><a href="/web-development" title="Web Design & Development for Small Businesses">
+          <strong>Web Design & Development</strong></a></li>
+        <li><a href="/mobile-apps" title="Mobile App Development for SMBs">
+          <strong>Mobile App Development for SMBs</strong></a></li>
+        <li><a href="/automation" title="Automation Tools for Small Businesses">
+          <strong>Small Business Automation Tools</strong></a></li>
+        <li><a href="/ai-integrations" title="AI Integrations & Chatbots">
+          <strong>AI Chatbots & Integrations</strong></a></li>
+        <li><a href="/dashboards" title="Dashboards & Analytics">
+          <strong>Dashboards & Data Analytics</strong></a></li>
+        <li><a href="/maintenance" title="Support & Maintenance Plans">
+          <strong>Ongoing Support & Maintenance</strong></a></li>
+
+        {/* <!-- Industries --> */}
+        <li className="divider" aria-hidden="true"></li>
+        <li><a href="/industries/home-services" title="Web & Apps for Home Services">
+          Home Services</a></li>
+        <li><a href="/industries/legal" title="Software for Legal & Immigration">
+          Legal</a></li>
+        <li><a href="/industries/real-estate" title="Real Estate Websites & CRMs">
+          Real Estate</a></li>
+        <li><a href="/industries/wellness" title="Wellness, Fitness & Studios">
+          Wellness & Fitness</a></li>
+        <li><a href="/industries/retail" title="Retail & E-commerce Solutions">
+          Retail & E-commerce</a></li>
+      </ul>
+    </nav>
+
+    {/* <!-- Location / Contact --> */}
+    <address className="footer-contact" aria-label="Location & Contact">
+      <p><strong>Denver, Colorado</strong> · Serving SMBs across Colorado & the U.S.</p>
+      <p>Email: <a href="mailto:hello@parranopolis.com">hello@parranopolis.com</a> ·
+         Phone: <a href="tel:+1-000-000-0000">+1 (000) 000-0000</a></p>
+      <p><a href="/portfolio">Portfolio</a> · <a href="/pricing">Pricing</a> ·
+         <a href="/contact">Free Consultation</a></p>
+    </address>
+
+    <small className="legal">
+      © <span id="year"></span> Parranopolis Studio. All rights reserved. |
+      <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
+    </small>
+  </div>
+
+  {/* <!-- JSON-LD Organization / LocalBusiness (adjust fields as needed) --> */}
+  {/* <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Parranopolis Studio",
+    "url": "https://www.parranopolis.com",
+    "logo": "https://www.parranopolis.com/assets/logo.png",
+    "description": "Boutique software studio building custom software, web & mobile apps, and business automations for SMBs.",
+    "areaServed": ["US", "Colorado", "Denver"],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@parranopolis.com",
+      "telephone": "+1-000-000-0000",
+      "areaServed": "US"
+    }],
+    "sameAs": [
+      "https://www.linkedin.com/company/parranopolis-studio"
+    ]
+  }
+  </script> */}
+
+  <script>
+    {/* // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear(); */}
+  </script>
           {/* <p>Custom Software Development for Small Businesses | Web Design for Clinics and Restaurants | Small Business Automation Tools | Mobile App Development for SMBs | Denver-based Software Studio | Affordable AI Integrations</p> */}
           <p className="text-xs">© 2025 Parranopolis Studio. Made with care to boost your business.</p>
         </footer>
