@@ -227,7 +227,13 @@ const handleCloseForm = () =>{
               " onClick={handleOpenForm}>Free Consultation</button>
           </div>
         </section>
-        <footer className="bg-[var(--dark-background)] text-white px-12 py-16 w-full sm:px-45 sm:text-center space-y-3">
+        {/* <footer className="bg-[var(--dark-background)] text-white px-12 py-16 w-full sm:px-45 sm:text-center space-y-3"> */}
+          <article>
+
+          </article>
+          
+          
+          
           {/* <address>
             <ul>
               <li>Email: <a href="mailto:parranopolisstudio@gmail.com" className="underline">parranopolisStudio@gmail.com</a></li>
@@ -243,23 +249,23 @@ const handleCloseForm = () =>{
             <li>Affordable AI Integrations</li>
           </ul> */}
 
-          <div className="footer-inner">
-    {/* <!-- Brand / Summary --> */}
+          {/* <div className="footer-inner">
+    {/* <!-- Brand / Summary --> 
     <div className="footer-brand">
       <Link href="/" className="brand" aria-label="Parranopolis Studio Home">
       Parranopolis Studio
     </Link>
-      {/* <a href="/" className="brand" aria-label="Parranopolis Studio Home">Parranopolis Studio</a> */}
+      {/* <a href="/" className="brand" aria-label="Parranopolis Studio Home">Parranopolis Studio</a
       <p className="tagline">
         We help small & mid-sized businesses grow with intelligent, modern, and efficient digital tools:
         custom software, web & mobile apps, and business automation—without the complexity.
       </p>
-    </div>
+    </div> */}
 
     {/* <!-- SEO Footer Links (Option B: service-led + industries) --> */}
-    <nav className="footer-nav" aria-label="Services & Industries">
+    {/* <nav className="footer-nav" aria-label="Services & Industries">
       <ul className="footer-links">
-        {/* <!-- Services --> */}
+        {/* <!-- Services --> 
         <li><a href="/custom-software" title="Custom Software Development for SMBs">
           <strong>Custom Software Development</strong></a></li>
         <li><a href="/web-development" title="Web Design & Development for Small Businesses">
@@ -275,7 +281,7 @@ const handleCloseForm = () =>{
         <li><a href="/maintenance" title="Support & Maintenance Plans">
           <strong>Ongoing Support & Maintenance</strong></a></li>
 
-        {/* <!-- Industries --> */}
+        {/* <!-- Industries --
         <li className="divider" aria-hidden="true"></li>
         <li><a href="/industries/home-services" title="Web & Apps for Home Services">
           Home Services</a></li>
@@ -288,10 +294,40 @@ const handleCloseForm = () =>{
         <li><a href="/industries/retail" title="Retail & E-commerce Solutions">
           Retail & E-commerce</a></li>
       </ul>
-    </nav>
+    </nav> */}
 
+<nav className="footer-nav" aria-label="Services & Industries">
+      <ul className="footer-links">
+        {/* <!-- Services --> */}
+        
+          {/* Custom Software Development
+        
+          Web Design & Development
+        
+          Mobile App Development for SMBs
+        
+          Small Business Automation Tools
+        
+          AI Chatbots & Integrations
+        
+          Dashboards & Data Analytics
+        
+          Ongoing Support & Maintenance
+
+        {/* <!-- Industries -->
+          Home Services
+        
+          Legal
+        
+          Real Estate
+        
+          Wellness & Fitness
+        
+          Retail & E-commerce */}
+      </ul>
+    </nav>
     {/* <!-- Location / Contact --> */}
-    <address className="footer-contact" aria-label="Location & Contact">
+    {/* <address className="footer-contact" aria-label="Location & Contact">
       <p><strong>Denver, Colorado</strong> · Serving SMBs across Colorado & the U.S.</p>
       <p>Email: <a href="mailto:parranopolisstudio@gmail.com">parranopolisstudio@gmail.com</a> ·
          Phone: <a href="tel:+1-720-561-9763">+1 (720) 5619763</a></p>
@@ -302,8 +338,8 @@ const handleCloseForm = () =>{
     <small className="legal">
       © <span id="year"></span> Parranopolis Studio. All rights reserved. |
       <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
-    </small>
-  </div>
+    </small> */}
+  {/* </div> */}
 
   {/* <!-- JSON-LD Organization / LocalBusiness (adjust fields as needed) --> */}
   {/* <script type="application/ld+json">
@@ -333,8 +369,9 @@ const handleCloseForm = () =>{
     document.getElementById('year').textContent = new Date().getFullYear(); */}
   </script>
           {/* <p>Custom Software Development for Small Businesses | Web Design for Clinics and Restaurants | Small Business Automation Tools | Mobile App Development for SMBs | Denver-based Software Studio | Affordable AI Integrations</p> */}
-          <p className="text-xs">© 2025 Parranopolis Studio. Made with care to boost your business.</p>
-        </footer>
+          {/* <p className="text-xs">© 2025 Parranopolis Studio. Made with care to boost your business.</p> */}
+        {/* </footer> */}
+        <Footer/>
       </main>
      </div>
   );
@@ -443,3 +480,143 @@ const orgJsonLd = {
 
 <Script id="org-schema" type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+function Footer() {
+  const services = [
+    { label: 'Custom Software Development', href: '/services/custom-software' },
+    { label: 'Mobile Apps', href: '/services/mobile-apps' },
+    { label: 'AI Chatbots', href: '/services/ai-chatbots' },
+    { label: 'Dashboards & Analytics', href: '/services/analytics' },
+  ];
+
+  const industries = [
+    'Small & Medium Businesses',
+    'Clinics / Healthcare',
+    'Law Firms',
+    'Retail & E-commerce',
+  ];
+
+  const org = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Parranopolis Studio',
+    url: 'https://parranopolisstudio.com',
+    logo: 'https://parranopolisstudio.com/icon.png',
+    areaServed: 'United States',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Denver',
+      addressRegion: 'CO',
+      addressCountry: 'US',
+    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        email: 'parranopolisstudio@gmail.com',
+        telephone: '+17205619763',
+        contactType: 'sales',
+        availableLanguage: ['English', 'Spanish'],
+      },
+    ],
+    // sameAs: [
+    //   'https://www.linkedin.com/company/parranopolis-studio',
+    //   'https://x.com/parranopolis', // update/remove if not used
+    //   'https://github.com/parranopolis'
+    // ],
+  };
+
+  return (
+    <footer className="border-t border-white/10 bg-neutral-950 text-neutral-200 px-12">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 sm:text-center">
+        {/* Footer nav landmark */}
+        <nav aria-labelledby="footer-heading" className="grid grid-cols-1 items-start gap-10 md:grid-cols-3">
+          <h2 id="footer-heading" className="sr-only">Footer navigation</h2>
+
+          {/* Left: services (internal links) */}
+          <div className="">
+            <h3 className="mb-3 text-3xl font-semibold tracking-wide text-neutral-400">
+              What we build
+            </h3>
+            <ul className="space-y-2 text-sm w-full">
+              {services.map((s) => (
+                <li key={s.label} className="flex items-center gap-2 text-xl">
+                  {/* <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-neutral-400 text-white" /> */}
+                  {/* <Link href={s.href} className="hover:underline underline-offset-4">  Activalo cuando tengas otras paginas */} 
+                    <span className="text-left">- {s.label}</span>
+                  {/* </Link> */}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Center: logo / brand */}
+          <div className="flex flex-col items-center text-center">
+            <Link href="/" aria-label="Parranopolis Studio — Home" className="group flex flex-col items-center">
+              <div className="relative h-20 w-48 mb-4">
+                <Image
+                  src="/icon.png"
+                  alt="Parranopolis Studio logo"
+                  fill
+                  className="object-contain scale-150"
+                  priority
+                />
+              </div>
+              <p className="mt-2 text-5xl text-white group-hover:text-neutral-300">
+                Parranopolis <br />Studio
+              </p>
+            </Link>
+          </div>
+
+          {/* Right: who we serve */}
+          <div className="md:text-right">
+            <h3 className="mb-3 text-3xl font-semibold tracking-wide text-neutral-400">
+              Who we serve
+            </h3>
+            <ul className="space-y-2 text-sm">
+              {industries.map((i) => (
+                <li key={i} className="flex items-center justify-start gap-2 md:justify-end text-xl">
+                  {/* <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-white " /> */}
+                  <span className="">- {i}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+
+        <div className="my-10 h-px w-full bg-white/10" />
+
+        {/* Bottom bar: NAP + contact */}
+        <div className="flex flex-col items-center justify-between gap-4 text-sm md:flex-row">
+          <address className="not-italic text-neutral-400">
+            Denver CO • Serving SMBs across the U.S.
+          </address>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <Link href="mailto:hello@parranopolisstudio.com" className="underline decoration-neutral-500 underline-offset-4 hover:text-white">
+              parranopolisstudio@gmail.com
+            </Link>
+            <span className="hidden h-4 w-px bg-white/10 md:block" />
+            <Link href="tel:+17209999999" className="underline decoration-neutral-500 underline-offset-4 hover:text-white">
+              +1 (720) 561-9763
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-6 text-center text-xs text-neutral-500">
+          <p>
+            © {new Date().getFullYear()} Parranopolis Studio. All rights reserved. 
+          
+            Made with care to boost your business.
+          
+          </p>
+        </div>
+      </div>
+
+      {/* JSON-LD (keep ONE Organization or LocalBusiness on the page) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }}
+      />
+    </footer>
+  );
+}
+
